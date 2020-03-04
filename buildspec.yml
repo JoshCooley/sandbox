@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+
+  pre_build:
+    commands:
+      - echo Getting SHA to build...
+      - export GIT_SHA="$(git rev-parse HEAD)";
+      - echo "####> GIT_SHA = $GIT_SHA"
+
+artifacts:
+  files:
+    - '**/*'
+
